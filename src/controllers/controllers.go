@@ -59,7 +59,7 @@ func EditaAluno(c *gin.Context) {
 	c.JSON(http.StatusOK, aluno)
 }
 
-func FindAlunoByCPF(c *gin.Context){
+func FindAlunoByCPF(c *gin.Context) {
 	var aluno models.Aluno
 	cpf := c.Param("cpf")
 	database.DB.Where(&models.Aluno{CPF: cpf}).First(&aluno)
