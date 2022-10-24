@@ -6,9 +6,9 @@ import (
 )
 
 type Aluno struct {
-	Nome string `json:"nome" validate:"nonzero"`
-	CPF  string `json:"cpf"  validade:"len=9"`
-	RG   string `json:"rg"   validade:"len=11"`
+	Nome string `json:"nome" validate:"nonzero, min=6"`
+	CPF  string `json:"cpf"  validade:"len=9, regexp=^[0-9]*$"`
+	RG   string `json:"rg"   validade:"len=11, regexp=^[0-9]*$"`
 	gorm.Model
 }
 
